@@ -1,0 +1,32 @@
+<mvc:View height="100%" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="CRA35.controller.DetailShow"
+	xmlns:form="sap.ui.layout.form" xmlns:semantic="sap.m.semantic" displayBlock="true">
+	<semantic:SemanticPage title="Activités" preserveHeaderStateOnScroll="true" toggleHeaderOnTitleClick="false" showNavButton="true"
+		navButtonPress=".onNavBack">
+		<Table id="listeJour" items="{ path : '/ActivityListSet'}">
+			<columns>
+				<Column>
+					<Text text="Jour"/>
+				</Column>
+				<Column>
+					<Text text="Type d'activité"/>
+				</Column>
+				<Column>
+					<Text text="Déplacement"/>
+				</Column>
+				<Column>
+					<Text text="Contrat"/>
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem>
+					<cells>
+						<Text text="{jour}"/>
+						<Text text="{type}"/>
+						<Text text="{deplacement}"/>
+						<Text text="{contrat}"/>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+	</semantic:SemanticPage>
+</mvc:View>

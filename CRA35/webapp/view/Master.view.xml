@@ -1,0 +1,14 @@
+<mvc:View height="100%" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="CRA35.controller.Master"
+	xmlns:semantic="sap.m.semantic" displayBlock="true">
+	<semantic:SemanticPage title="Mois" preserveHeaderStateOnScroll="true" toggleHeaderOnTitleClick="false">
+		<List id="listeMois" items="{ path : '/MonthListSet'}">
+			<items>
+				<ObjectListItem type="Navigation" press=".onSelectMonth" title="{mois} {annee}" state="{= ${modif} === 'X' ? 'Error' : 'Success'}">
+					<firstStatus>
+						<ObjectStatus state="{= ${modif} === '' ? 'None' : 'Success'}" text="{= ${modif} === '' ? 'Validé' : 'A remplir'}"/>
+					</firstStatus>
+				</ObjectListItem>
+			</items>
+		</List>
+	</semantic:SemanticPage>
+</mvc:View>

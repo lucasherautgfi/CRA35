@@ -1,0 +1,46 @@
+<mvc:View height="100%" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="CRA35.controller.Detail"
+	xmlns:form="sap.ui.layout.form" xmlns:semantic="sap.m.semantic" displayBlock="true">
+	<semantic:SemanticPage title="Activités" preserveHeaderStateOnScroll="true" toggleHeaderOnTitleClick="false" showNavButton="true"
+		navButtonPress=".onNavBackDetail">
+		<Wizard id="idWizard" complete="onSave" finishButtonText="Enregistrer">
+			<WizardStep title="Informations générales" validated="true" icon="sap-icon://activities" complete="generalInfoHandler">
+				<form:SimpleForm editable="true">
+					<Label text="Type par défaut"/>
+					<Input id="typeInput"/>
+					<Label text="Lieu de déplacement par défaut"/>
+					<Input id="deplInput"/>
+					<Label text="Contrat par défaut"/>
+					<Input id="contratInput"/>
+				</form:SimpleForm>
+			</WizardStep>
+			<WizardStep title="Liste des activités" validated="true" icon="sap-icon://appointment">
+				<Table id="listeJour" items="{ path : '/ActivityListSet'}">
+					<columns>
+						<Column>
+							<Text text="Jour"/>
+						</Column>
+						<Column>
+							<Text text="Type d'activité"/>
+						</Column>
+						<Column>
+							<Text text="Déplacement"/>
+						</Column>
+						<Column>
+							<Text text="Contrat"/>
+						</Column>
+					</columns>
+					<items>
+						<ColumnListItem>
+							<cells>
+								<Text text="{jour}"/>
+								<Input value="{type}"/>
+								<Input value="{deplacement}"/>
+								<Input value="{contrat}"/>
+							</cells>
+						</ColumnListItem>
+					</items>
+				</Table>
+			</WizardStep>
+		</Wizard>
+	</semantic:SemanticPage>
+</mvc:View>

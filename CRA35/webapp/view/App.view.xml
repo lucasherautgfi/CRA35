@@ -1,0 +1,4 @@
+<mvc:View height="100%" xmlns="sap.m" xmlns:f="sap.f" xmlns:mvc="sap.ui.core.mvc" controllerName="CRA35.controller.App">
+	<App id="idApp">
+	</App>
+</mvc:View>
